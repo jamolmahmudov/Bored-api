@@ -11,16 +11,7 @@ class Bored:
         Returns:
             str: text of activity
         '''
-        endpoint = "activity/"
-        url = self.url + endpoint
-
-        response = requests.get(url)
-
-        if response.status_code == 200:
-            return response.json()
-        
-        return response.status_code
-    
+        pass    
 
     def get_activity_by_type(self, type: str) -> dict:
         '''get activity by type
