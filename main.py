@@ -11,7 +11,18 @@ class Bored:
         Returns:
             str: text of activity
         '''
-        pass    
+        endpoint = 'activity'
+
+        url = self.url + endpoint
+
+        respons = requests.get(url)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
+
+           
 
     def get_activity_by_type(self, type: str) -> dict:
         '''get activity by type
@@ -25,7 +36,20 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = 'activity'
+
+        url = self.url + endpoint
+
+        payload = {
+            "type":type
+        }
+
+        respons = requests.get(url, params=payload)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
 
     def get_activity_by_id(self, key: int) -> dict:
         '''get activity by key
@@ -39,7 +63,20 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = "activity"
+
+        url = self.url + endpoint
+
+        payload = {
+            "key":key
+        }
+
+        respons = requests.get(url, params=payload)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
 
     def get_activity_by_accessibility(self, accessibility: float) -> dict:
         '''get activity by accessibility
@@ -54,7 +91,22 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = "activity"
+
+        url = self.url + endpoint
+
+        payload = {
+
+            "accessibility":accessibility
+
+        }
+
+        respons = requests.get(url, params=payload)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
 
     def get_activity_by_price(self, price: float) -> dict:
         '''get activity by price
@@ -69,7 +121,22 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = "activity"
+
+        url = self.url + endpoint
+
+        payload = {
+
+            "price":price
+
+        }
+
+        respons = requests.get(url, params=payload)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
 
     def get_activity_by_price_range(self, minprice: float, maxprice: float) -> dict:
         '''get activity by price
@@ -85,4 +152,20 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        endpoint = "activity"
+
+        url = self.url + endpoint
+
+        payload = {
+
+            "minprice":minprice,
+            "maxprice":maxprice
+
+        }
+
+        respons = requests.get(url, params=payload)
+
+        if respons.status_code == 200:
+            return respons.json()
+        
+        return respons.status_code
